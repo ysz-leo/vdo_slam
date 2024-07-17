@@ -1,4 +1,9 @@
-<<<<<<< HEAD
+This repositories is a modified VDO-SLAM based on [VDO-SLAM](https://github.com/halajun/VDO_SLAM) The relatively new libraries (including ubuntu20.04, Opencv4 etc.) are used, and the built images are provided, which can be reproduced quickly.
+
+![alt text](example/example_image/example_image-0.png)
+![alt text](example/example_image/example_image-1.png)
+![alt text](example/example_image/example_image-2.png)
+
 # VDO-SLAM
 **Authors:** [Jun Zhang*](https://halajun.github.io/), [Mina Henein*](https://minahenein.github.io/), [Robert Mahony](https://users.cecs.anu.edu.au/~Robert.Mahony/) and [Viorela Ila](http://viorelaila.net/) 
 (*equally contributed)
@@ -50,22 +55,28 @@ Mina Henein, Jun Zhang, Robert Mahony and Viorela Ila.
 
 
 # 2. Prerequisites
-We have tested the library in **Mac OS X 10.14** and **Ubuntu 16.04**, but it should be easy to compile in other platforms. 
+We have tested the library in **Ubuntu 20.04**, but it should be easy to compile in other platforms. 
 
 ## c++11, gcc and clang
 We use some functionalities of c++11, and the tested gcc version is 9.2.1 (ubuntu), the tested clang version is 1000.11.45.5 (Mac).
 
 ## OpenCV
-We use [OpenCV](http://opencv.org) to manipulate images and features. Download and install instructions can be found at: http://opencv.org. **Required at least 3.0. Tested with OpenCV 3.4**.
+We use [OpenCV](http://opencv.org) to manipulate images and features. Download and install instructions can be found at: http://opencv.org. **Required at least 4.0. Tested with OpenCV 4.7**.
 
 ## Eigen3
-Required by g2o (see below). Download and install instructions can be found at: http://eigen.tuxfamily.org. **Required at least 3.1.0**.
+Required by g2o (see below). Download and install instructions can be found at: http://eigen.tuxfamily.org. **Required at least 3.3.90**.
 
 ## g2o (Included in dependencies folder)
 We use modified versions of [g2o](https://github.com/RainerKuemmerle/g2o) library to perform non-linear optimizations. The modified libraries (which are BSD) are included in the *dependencies* folder.
 
+## Pull the mirror to create docker environment (Recommended)
+It is recommended to use the dockr container image that we have built.You can use the following command to pull here. Opencv 4.7, Eigen 3.3.90, g2o and CSparse 1:5.7.1 have been installed.
+```
+docker pull uhub.service.ucloud.cn/slam/vdo_slam:v1
+```
+
 ## Use Dockerfile for auto installation
-For Ubuntu users, a Dockerfile is added for automatically installing all dependencies for reproducible environment, built and tested with KITTI dataset. (Thanks @satyajitghana for the contributions 👍 )
+You can skip this step if the docker environment was created by pulling the image in the previous step.For Ubuntu users, a Dockerfile is added for automatically installing all dependencies for reproducible environment, built and tested with KITTI dataset. (Thanks @satyajitghana for the contributions 👍 )
 
 
 # 3. Building VDO-SLAM Library
