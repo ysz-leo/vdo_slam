@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/docker_share/CodeProject/VDO_SLAM/python_test/cv_test/main.cpp
+opencv2/opencv.hpp
+-
+iostream
+-
+
